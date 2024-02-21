@@ -1,0 +1,103 @@
+2>Department Class:
+1>Create a Department class with attributes for department name and a list of employees.
+
+ans=Here's a basic implementation of a Department class in Python:
+class Department:
+    def __init__(self, name):
+        self.name = name
+        self.employees = []
+
+    def add_employee(self, employee):
+        self.employees.append(employee)
+
+    def remove_employee(self, employee):
+        if employee in self.employees:
+            self.employees.remove(employee)
+        else:
+            print(f"{employee} is not in {self.name} department.")
+
+    def display_employees(self):
+        print(f"Employees in {self.name} department:")
+        for employee in self.employees:
+            print(employee)
+
+
+# Example usage:
+if __name__ == "__main__":
+    # Creating a department
+    hr_department = Department("HR")
+
+    # Adding employees to the department
+    hr_department.add_employee("Alice")
+    hr_department.add_employee("Bob")
+    hr_department.add_employee("Charlie")
+
+    # Displaying employees in the department
+    hr_department.display_employees()
+
+    # Removing an employee from the department
+    hr_department.remove_employee("Bob"
+
+    # Displaying employees after removal
+    hr_department.display_employees()
+===========================================================================================================================================================================
+In this implementation:
+
+1>The Department class has attributes for name and employees.
+2>There are methods to add_employee, remove_employee, and display_employees.
+3>The add_employee method adds an employee to the list of employees in the department.
+4>The remove_employee method removes an employee from the list of employees in the department, if they exist.
+5>The display_employees method prints out all the employees in the department.
+
+02>Include methods to add an employee, remove an employee, and list all employees in the department.
+
+
+ans=Sure, here's an updated version of the Department class with methods to add an employee, remove an employee, and list all employees in the department:
+=================================================================================================================================================================================
+class Department:
+    def __init__(self, name):
+        self.name = name
+        self.employees = []
+
+    def add_employee(self, employee):
+        self.employees.append(employee)
+
+    def remove_employee(self, employee):
+        if employee in self.employees:
+            self.employees.remove(employee)
+            print(f"{employee} has been removed from the {self.name} department.")
+        else:
+            print(f"{employee} is not in the {self.name} department.")
+
+    def list_employees(self):
+        print(f"Employees in the {self.name} department:")
+        for employee in self.employees:
+            print(employee)
+
+
+# Example usage:
+if __name__ == "__main__":
+    # Creating a department
+    hr_department = Department("HR")
+
+    # Adding employees to the department
+    hr_department.add_employee("Alice")
+    hr_department.add_employee("Bob")
+    hr_department.add_employee("Charlie")
+
+    # Listing employees in the department
+    hr_department.list_employees()
+
+    # Removing an employee from the department
+    hr_department.remove_employee("Bob")
+
+    # Listing employees after removal
+    hr_department.list_employees()
+========================================================================================================================================================================================
+In this version, I've added:
+
+1>remove_employee method that removes an employee from the department's employee list, if they exist, and provides feedback about the removal.
+2>list_employees method that prints out all the employees in the department.
+
+
+

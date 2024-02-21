@@ -1,0 +1,38 @@
+class Department:
+    def __init__(self, name):
+        self.name = name
+        self.employees = []
+
+    def add_employee(self, employee):
+        self.employees.append(employee)
+        print(f"{employee.name} added to {self.name}")
+
+    def remove_employee(self, employee):
+        if employee in self.employees:
+            self.employees.remove(employee)
+            print(f"{employee.name} removed from {self.name}")
+        else:
+            print(f"{employee.name} not found in {self.name}")
+
+    def list_employees(self):
+        print(f"Employees in {self.name}:")
+        for employee in self.employees:
+            print(employee)
+
+
+# Example usage:
+if __name__ == "__main__":
+    emp1 = Employee("John Doe", 1001, "Software Engineer", "Engineering")
+    emp2 = Employee("Jane Smith", 1002, "HR Manager", "Human Resources")
+    
+    engineering_dept = Department("Engineering")
+    hr_dept = Department("Human Resources")
+
+    engineering_dept.add_employee(emp1)
+    hr_dept.add_employee(emp2)
+
+    engineering_dept.list_employees()
+    hr_dept.list_employees()
+
+    engineering_dept.remove_employee(emp1)
+    hr_dept.remove_employee(emp1)  # Trying to remove a non-existing employee

@@ -1,0 +1,84 @@
+Employee Management System
+Objective:
+Develop a command-line Employee Management System using Python that allows a company to manage information about their employees and departments using OOP and data structures.
+Requirements:
+• Employee Class:
+1>o Create an Employee class with attributes for name, ID, title, and department.
+
+ans=Here's a basic implementation of the Employee class in Python:
+==============================================================================================================================================================================================
+class Employee:
+    def __init__(self, name, emp_id, title, department):
+        self.name = name
+        self.emp_id = emp_id
+        self.title = title
+        self.department = department
+
+    def __str__(self):
+        return f"Employee Name: {self.name}\nEmployee ID: {self.emp_id}\nTitle: {self.title}\nDepartment: {self.department}"
+
+# Example usage:
+if __name__ == "__main__":
+    emp = Employee("John Doe", "E123", "Software Engineer", "Engineering")
+    print(emp)
+==============================================================================================================================================================================================
+This code defines an Employee class with attributes for name, ID, title, and department. The __init__ method initializes these attributes when an Employee object is created. The __str__ method is overridden to provide a string representation of the Employee object when it is printed.
+
+You can create an Employee object by passing values for name, ID, title, and department, and then print it to see the details of the employee.=
+===========================================================================================================================================================================================
+2>Include a method to display employee details
+
+ans=Sure, I can include a method in the Employee class to display employee details. Here's the updated code:
+============================================================================================================================================================================================
+class Employee:
+    def __init__(self, name, emp_id, title, department):
+        self.name = name
+        self.emp_id = emp_id
+        self.title = title
+        self.department = department
+
+    def display_details(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Employee ID: {self.emp_id}")
+        print(f"Title: {self.title}")
+        print(f"Department: {self.department}")
+
+# Example usage:
+if __name__ == "__main__":
+    emp = Employee("John Doe", "E123", "Software Engineer", "Engineering")
+    emp.display_details()
+=======================================================================================================================================================================================
+In this code, I've added a method called display_details() to the Employee class. This method prints out the details of the employee, including their name, ID, title, and department. Now you can call this method on an Employee object to display their details.
+
+3>Implement a string representation method that returns the employee's name and ID.
+ans=Sure, I'll implement the __str__ method to return the employee's name and ID. Here's the updated code:
+=======================================================================================================================
+class Employee:
+    def __init__(self, name, emp_id, title, department):
+        self.name = name
+        self.emp_id = emp_id
+        self.title = title
+        self.department = department
+
+    def __str__(self):
+        return f"Name: {self.name}, ID: {self.emp_id}"
+
+    def display_details(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Employee ID: {self.emp_id}")
+        print(f"Title: {self.title}")
+        print(f"Department: {self.department}")
+
+# Example usage:
+if __name__ == "__main__":
+    emp = Employee("John Doe", "E123", "Software Engineer", "Engineering")
+    print(emp)  # This will print the employee's name and ID
+    emp.display_details()  # This will print all details of the employee
+============================================================================================================================
+Now, when you print an Employee object, it will return the employee's name and ID. The display_details() method remains unchanged and can be used to print
+ out all details of the employee.
+
+
+
+
+

@@ -1,0 +1,125 @@
+def print_menu():
+    print("Employee Management System Menu:")
+    print("1. Add Employee to Department")
+    print("2. Remove Employee from Department")
+    print("3. Display Department Employees")
+    print("4. Add Department")
+    print("5. Remove Department")
+    print("6. Display Departments")
+    print("0. Exit")
+
+
+def add_employee_to_department(company):
+    department_name = input("Enter department name: ")
+    if department_name in company.departments:
+        employee_name = input("Enter employee name: ")
+        company.departments[department_name].add_employee(employee_name)
+        print(f"{employee_name} has been added to the {department_name} department.")
+    else:
+        print(f"{department_name} department does not exist.")
+
+
+def remove_employee_from_department(company):
+    department_name = input("Enter department name: ")
+    if department_name in company.departments:
+        employee_name = input("Enter employee name: ")
+        company.departments[department_name].remove_employee(employee_name)
+    else:
+        print(f"{department_name} department does not exist.")
+
+
+def display_department_employees(company):
+    department_name = input("Enter department name: ")
+    if department_name in company.departments:
+        company.departments[department_name].list_employees()
+    else:
+        print(f"{department_name} department does not exist.")
+
+
+def add_department(company):
+    department_name = input("Enter department name: ")
+    company.add_department(department_name)
+
+
+def remove_department(company):
+    department_name = input("Enter department name: ")
+    company.remove_department(department_name)
+
+
+def display_departments(company):
+    company.list_departments()
+
+
+class Department:
+    def __init__(self, name):
+        self.name = name
+        self.employees = []
+
+    def add_employee(self, employee):
+        self.employees.append(employee)
+
+    def remove_employee(self, employee):
+        if employee in self.employees:
+            self.employees.remove(employee)
+            print(f"{employee} has been removed from the {self.name} department.")
+        else:
+            print(f"{employee} is not in the {self.name} department.")
+
+    def list_employees(self):
+        print(f"Employees in the {self.name} department:")
+        for employee in self.employees:
+            print(employee)
+
+
+class Company:
+    def __init__(self):
+        self.departments = {}
+
+    def add_department(self, department_name):
+        if department_name not in self.departments:
+            self.departments[department_name] = Department(department_name)
+            print(f"{department_name} department has been added to the company.")
+        else:
+            print(f"{department_name} department already exists in the company.")
+
+    def remove_department(self, department_name):
+        if department_name in self.departments:
+            del self.departments[department_name]
+            print(f"{department_name} department has been removed from the company.")
+        else:
+            print(f"{department_name} department does not exist in the company.")
+
+    def list_departments(self):
+        print("Departments in the company:")
+        for department_name in self.departments:
+            print(department_name)
+
+
+def main():
+    company = Company()
+
+    while True:
+        print_menu()
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_employee_to_department(company)
+        elif choice == "2":
+            remove_employee_from_department(company)
+        elif choice == "3":
+            display_department_employees(company)
+        elif choice == "4":
+            add_department(company)
+        elif choice == "5":
+            remove_department(company)
+        elif choice == "6":
+            display_departments(company)
+        elif choice == "0":
+            print("Exiting the Employee Management System. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a valid option.")
+
+
+if __name__ == "__main__":
+    main()
